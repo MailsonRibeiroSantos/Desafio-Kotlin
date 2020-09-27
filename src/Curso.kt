@@ -1,4 +1,11 @@
-class Curso(val nome: String, val codigo:Int, var professorTitular:ProfessorTitular, var professorAdjunto:ProfessorAdjunto, val qtdMaximaAlunos:Int, var listaAlunos:MutableList<Aluno>) {
+class Curso(var nome: String, var codigo:Int, var professorTitular:ProfessorTitular, var professorAdjunto:ProfessorAdjunto, var qtdMaximaAlunos:Int, var listaAlunos:MutableList<Aluno>) {
+
+    constructor( nome: String, codigoCurso: Int, quantidadeMaximaDeAlunos: Int){
+        this.nome = nome
+        this.codigo = codigoCurso
+        this.qtdMaximaAlunos = quantidadeMaximaDeAlunos
+    }
+
     fun adicionarUmAluno(umAluno: Aluno): Boolean{
         if(listaAlunos.contains(umAluno)){
             return false
