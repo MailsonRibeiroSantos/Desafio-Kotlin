@@ -60,6 +60,8 @@ class DigitalHouseManager {
 
         if(aluno != null && curso != null && curso!!.listaAlunos.size < curso!!.qtdMaximaAlunos){
             curso!!.adicionarUmAluno(aluno!!)
+            var matricula = Matricula(aluno!!,curso!!)
+            listaMatriculas.add(matricula)
             println("Matrícula realizada com sucesso!!")
         }else if(curso!!.listaAlunos.size >= curso!!.qtdMaximaAlunos){
             println("Não foi possível realizar a matrícula, pois não há vagas!!")
@@ -89,6 +91,11 @@ class DigitalHouseManager {
         }
     }
 
-
-
+    override fun toString(): String {
+        return "Digital HouseManager: \n" +
+                "Lista Alunos = $listaAlunos \n" +
+                "Lista Professores = $listaProfessores \n" +
+                "Lista Cursos = $listaCursos \n" +
+                "Lista Matriculas = $listaMatriculas \n"
+    }
 }

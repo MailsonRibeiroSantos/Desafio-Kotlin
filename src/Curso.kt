@@ -1,9 +1,12 @@
-class Curso(var nome: String, var codigo:Int, var professorTitular:ProfessorTitular, var professorAdjunto:ProfessorAdjunto, var qtdMaximaAlunos:Int, var listaAlunos:MutableList<Aluno>) {
+class Curso(var nome: String, var codigo:Int,  var qtdMaximaAlunos:Int) {
+    var professorTitular:ProfessorTitular? = null
+    var professorAdjunto:ProfessorAdjunto? = null
+    var listaAlunos:MutableList<Aluno> = mutableListOf<Aluno>()
+    constructor( nome: String, codigoCurso: Int, quantidadeMaximaDeAlunos: Int, professorTitular:ProfessorTitular, professorAdjunto:ProfessorAdjunto, listaAlunos:MutableList<Aluno>): this(nome,codigoCurso,quantidadeMaximaDeAlunos){
+        this.professorAdjunto = professorAdjunto
+        this.professorTitular = professorTitular
+        this.listaAlunos = listaAlunos
 
-    constructor( nome: String, codigoCurso: Int, quantidadeMaximaDeAlunos: Int){
-        this.nome = nome
-        this.codigo = codigoCurso
-        this.qtdMaximaAlunos = quantidadeMaximaDeAlunos
     }
 
     fun adicionarUmAluno(umAluno: Aluno): Boolean{
@@ -16,6 +19,10 @@ class Curso(var nome: String, var codigo:Int, var professorTitular:ProfessorTitu
 
     fun excluirAluno(umAluno: Aluno){
         listaAlunos.remove(umAluno)
+    }
+
+    override fun toString(): String {
+        return "Curso(nome='$nome', codigo=$codigo, qtdMaximaAlunos=$qtdMaximaAlunos)"
     }
 
 }

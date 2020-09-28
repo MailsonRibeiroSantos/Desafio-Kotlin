@@ -5,4 +5,8 @@ class Matricula (var aluno: Aluno, var curso:Curso) {
     init {
         data = LocalDateTime.now()
     }
+
+    override fun toString(): String {
+        return "Matricula(aluno=$aluno, curso=$curso, data=$data)"
+    }
 }
