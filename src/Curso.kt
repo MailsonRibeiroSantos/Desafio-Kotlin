@@ -22,7 +22,11 @@ class Curso(var nome: String, var codigo:Int,  var qtdMaximaAlunos:Int) {
     }
 
     override fun toString(): String {
-        return "Curso(nome='$nome', codigo=$codigo, qtdMaximaAlunos=$qtdMaximaAlunos)"
+        if(professorAdjunto !=null && professorTitular !=null) {
+            return "Curso(nome='$nome', codigo=$codigo, qtdMaximaAlunos=$qtdMaximaAlunos  Professor Titular =${professorTitular.toString()} Professor Adjunto =${professorAdjunto.toString()})"
+        }else{
+            return "Curso(nome='$nome', codigo=$codigo, qtdMaximaAlunos=$qtdMaximaAlunos)"
+        }
     }
 
 }

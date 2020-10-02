@@ -14,6 +14,7 @@ class DigitalHouseManager {
         for (curso in listaCursos){
             if(codigoCurso == curso.codigo) {
                 listaCursos.remove(curso)
+                break
             }
         }
     }
@@ -33,6 +34,7 @@ class DigitalHouseManager {
         for (professor in listaProfessores){
             if(codigoProfessor == professor.codigo){
                 listaProfessores.remove(professor)
+                break
             }
         }
     }
@@ -84,11 +86,14 @@ class DigitalHouseManager {
         listaProfessores.forEach {
             if(it.codigo == codigoProfessorTitular){
                 professorTitular = it as ProfessorTitular?
+
             }
             if(it.codigo == codigoProfessorAdjunto){
                 professorAdjunto = it as ProfessorAdjunto?
             }
         }
+        curso!!.professorAdjunto = professorAdjunto
+        curso!!.professorTitular = professorTitular
     }
 
     override fun toString(): String {

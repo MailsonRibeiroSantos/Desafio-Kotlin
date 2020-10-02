@@ -1,15 +1,19 @@
 fun main(){
-    menuPrincipal()
+    try {
+        menuPrincipal()
+    }catch (ex:Exception){
+        ex.printStackTrace()
+    }
 }
 fun menuPrincipal(){
     val digitalHouseManager = DigitalHouseManager()
     do {
         println("----------------------------------------------------------------------")
         println("Selecione uma opção:")
-        println("1 -> Cadastrar curso")
+        println("1 -> Registrar curso")
         println("2 -> Excluir curso")
-        println("3 -> Cadastrar professor adjunto")
-        println("4 -> Cadastrar professor titular")
+        println("3 -> Registrar professor adjunto")
+        println("4 -> Registrar professor titular")
         println("5 -> Excluir professor")
         println("6 -> Registrar aluno")
         println("7 -> Matricular aluno")
